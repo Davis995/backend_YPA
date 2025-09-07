@@ -1,0 +1,44 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Virtual environment
+venv/
+.env/
+.envrc
+*.env
+
+# Django specific
+db.sqlite3
+staticfiles/
+media/
+
+# VSCode / PyCharm / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional: sometimes people commit them, sometimes not)
+# Uncomment if you don’t want to push migrations
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Coverage / testing
+htmlcov/
+.tox/
+.coverage
+.pytest_cache/
+
+# Node (if you’re using React or any frontend inside project)
+node_modules/
+dist/
+build/
