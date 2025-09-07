@@ -25,6 +25,6 @@ class AdminAppConfig(AppConfig):
                 User.objects.create_superuser(
                     username="admin",
                     email="admin@example.com",
-                    password="SuperSecretPassword123"
+                    password="admin123"
                 )
                 print("Superuser created!")
