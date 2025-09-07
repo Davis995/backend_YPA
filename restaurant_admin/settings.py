@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import os
+import dj_database_url
 from decouple import config,Csv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,15 +66,20 @@ WSGI_APPLICATION = 'restaurant_admin.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config("DB_NAME"),       # your database name
+#         'USER': config("DB_USER"),           # your username
+#         'PASSWORD': config("DB_PASSWORD"),   # your password
+#         'HOST': config("DB_HOST"),        # or your server IP
+#         'PORT': config("DB_PORT"),             # default PostgreSQL port
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config("DB_NAME"),       # your database name
-        'USER': config("DB_USER"),           # your username
-        'PASSWORD': config("DB_PASSWORD"),   # your password
-        'HOST': config("DB_HOST"),        # or your server IP
-        'PORT': config("DB_PORT"),             # default PostgreSQL port
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
